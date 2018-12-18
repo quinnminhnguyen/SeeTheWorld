@@ -1,6 +1,7 @@
 const SUCCESS = "SUCCESS";
 
 function sendMessage() {
+    console.log("Parsing Page")
     chrome.tabs.query({
         active: true,
         currentWindow: true
@@ -16,5 +17,7 @@ function sendMessage() {
     $("#activate").prop("disabled", true);
     $("#activate").text("loading");
 }
+
+console.log("Loaded extension")
 
 $("#activate").click(sendMessage);
